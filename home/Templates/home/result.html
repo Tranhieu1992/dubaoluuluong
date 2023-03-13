@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}" >
+    
+</head>
+<body>
+    <div id="main">
+        <div id="top">
+            <h1>DỰ BÁO LƯỢNG NƯỚC</h1>
+        </div>
+        <div id="header">
+            <ul id="nav">
+                <li><a href="">GIỚI THIỆU</a></li>
+                <li>
+                    <a href="">DỰ ĐOÁN LƯỢNG NƯỚC</a>
+                </li>
+                <li>
+                    <a href="">NHẬP LIỆU</a>
+                </li>
+            </ul>
+        </div>
+        <div id="content">
+            <p>Đây là trang kết quả </p>
+            {% if result > 0 %}
+                <h1>Chay vao day {{result}} </h1>
+                <a href=""> </a>
+            {% else %}
+                <h1>Khong co ket qua</h1>
+            {% endif %}
+        </div>
+        
+    </div>
+    
+    
+</body>
+</html>

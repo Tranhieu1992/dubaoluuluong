@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<title>Fahrenheit to Celcius Temperature Converter</title>
+<body>
+    <div>
+        <p>Select local CSV File:</p>
+        <input id="csv" type="file" accept=".csv">
+    </div>
+<pre id="out"><p>File contents will appear here</p></pre>
+
+
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+<script>
+    const fileInput = document.getElementById('csv')
+    const readFile = () => {
+        const reader = new FileReader()
+        reader.onload = () => {
+            var allText =  reader.result;
+            var allTextLines = allText.split(/\r\n|\n/);
+            console.log(allTextLines);
+            
+        }
+        // start reading the file. When it is done, calls the onload event defined above.
+        reader.readAsBinaryString(fileInput.files[0])
+    }
+    fileInput.addEventListener('change', readFile)
+</script>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}" >
+</head>
+<body>
+    <div id="main">
+        <div id="top">
+            <h1>DỰ BÁO DÒNG CHẢY ĐẾN HỒ THỦY ĐIỆN LAI CHÂU</h1>
+        </div>
+        <div id="header">
+            <ul id="nav">
+                <li><a href="">GIỚI THIỆU</a></li>
+                <li>
+                    <a href="">DỰ BÁO DÒNG CHẢY </a>
+                </li>
+                {% comment %} <li>
+                    <a href="">NHẬP LIỆU</a>
+                </li> {% endcomment %}
+            </ul>
+        </div>
+        <div class="f-grid">
+            <div class="f-grid-col">
+                <img class="back_ground" src="{% static 'images/back_ground.png'%} ">
+            </div>
+            <div class="f-grid-col">
+                <div class="btn" >
+                    <h2>LỰA CHỌN MÔ HÌNH</h2>
+                </div>  
+                <div id="btn_content" >
+                    <button onclick="openPopup_model_rnn()" class="btn-point">RNN</button>
+                    <div id="overlay_rnn">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closePopup_model_rnn()" >×</a>
+                        <!-- Nội dung trong Popup -->
+                        <center>
+                            <div class="overlay-content">
+                                <h3>DỰ BÁO THỬ NGHIỆM DÒNG CHẢY THÁNG CỦA NĂM 2010 (THUẬT TOÁN RNN)</h3>
+                                    <canvas id="myChart" height="400" width="800"></canvas>
+                                        <table style="width:100%" >
+                                            <tr>
+                                            <th>Thuật Toán</th>
+                                            <th>MSE</th>
+                                            <th>RMSE</th>
+                                            </tr>
+                                            <tr>
+                                            <td>RNN</td>
+                                            <td>175.93</td>
+                                            <td>30941.52</td>
+                                            </tr>
+                                            <tr>
+                                        </table>
+                                <p>CHỌN THỜI GIAN DỰ BÁO</p>
+                                <select id="TenDanhSach" >
+                                    <option value="2011">2011</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                </select>
+                                <button class="btn_predict" onclick="openPopup_predict()">DỰ BÁO NGAY</button>
+                                <div id="content_predict">
+                                    <p id="myP">BẢNG KẾT QUẢ DỰ BÁO NĂM 2011</p>
+                                    <canvas id="predictChart" ></canvas>
+                                </div>
+                            </div>
+                        </center>
+                        <!-- Kết Thúc Nội dung trong Popup -->
+                        </div>
+                    <button onclick="openPopup_model_lstm()" class="btn-point">LSTM</button>
+                    <!---LSTM-->
+                    <div id="overlay_lstm">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closePopup_model_lstm()" >×</a>
+                        <!-- Nội dung trong Popup -->
+                        <center>
+                            <div class="overlay-content">
+                                <h3>DỰ BÁO THỬ NGHIỆM DÒNG CHẢY THÁNG CỦA NĂM 2010 (THUẬT TOÁN LSTM)</h3>
+                                    <canvas id="myChart" height="400" width="800"></canvas>
+                                        <table style="width:100%" >
+                                            <tr>
+                                            <th>Thuật Toán</th>
+                                            <th>MSE</th>
+                                            <th>RMSE</th>
+                                            </tr>
+                                            <tr>
+                                            <td>RNN</td>
+                                            <td>175.93</td>
+                                            <td>30941.52</td>
+                                            </tr>
+                                            <tr>
+                                        </table>
+                                <p>CHỌN THỜI GIAN DỰ BÁO</p>
+                                <select id="TenDanhSach" >
+                                    <option value="2011">2011</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                </select>
+                                <button class="btn_predict" onclick="openPopup_predict()">DỰ BÁO NGAY</button>
+                                <div id="content_predict">
+                                    <p id="myP">BẢNG KẾT QUẢ DỰ BÁO NĂM 2011</p>
+                                    <canvas id="predictChart" ></canvas>
+                                </div>
+                            </div>
+                        </center>
+                        <!-- Kết Thúc Nội dung trong Popup -->
+                        </div>
+                    <!---END LSTM-->
+                    <button onclick="openPopup_model_sarima()" class="btn-point">SARIMA</button>
+                    <!---SARIMA-->
+                    <div id="overlay_sarima">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closePopup_model_sarima()" >×</a>
+                        <!-- Nội dung trong Popup -->
+                        <center>
+                            <div class="overlay-content">
+                                <h3>DỰ BÁO THỬ NGHIỆM DÒNG CHẢY THÁNG CỦA NĂM 2010 (THUẬT TOÁN SARIMA)</h3>
+                                    <canvas id="myChart" height="400" width="800"></canvas>
+                                        <table style="width:100%" >
+                                            <tr>
+                                            <th>Thuật Toán</th>
+                                            <th>MSE</th>
+                                            <th>RMSE</th>
+                                            </tr>
+                                            <tr>
+                                            <td>RNN</td>
+                                            <td>175.93</td>
+                                            <td>30941.52</td>
+                                            </tr>
+                                            <tr>
+                                        </table>
+                                <p>CHỌN THỜI GIAN DỰ BÁO</p>
+                                <select id="TenDanhSach" >
+                                    <option value="2011">2011</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                </select>
+                                <button class="btn_predict" onclick="openPopup_predict()">DỰ BÁO NGAY</button>
+                                <div id="content_predict">
+                                    <p id="myP">BẢNG KẾT QUẢ DỰ BÁO NĂM 2011</p>
+                                    <canvas id="predictChart" ></canvas>
+                                </div>
+                            </div>
+                        </center>
+                        <!-- Kết Thúc Nội dung trong Popup -->
+                        </div>
+                    <!---END SARIMA-->
+                </div>
+                <div class="image_content">
+                    <img width="200px" src="{% static 'images/rnn.png'%}" alt="">
+                    <img width="200px" src="{% static 'images/lstm.png'%}" alt="">
+                    <img width="200px" src="{% static 'images/arima.png'%}" alt="">
+                </div>
+              
+
+                
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{% static 'js/showpopup.js'%}"></script>
+    <script src="{% static 'js/chart.js'%}"></script>
+    
+</body>
+</html>

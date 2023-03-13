@@ -1,0 +1,214 @@
+* {
+    padding: 0;
+}
+html {
+    font-family: Helvetica, sans-serif;
+}
+#main {
+    background-color: #ffff;
+}
+#top {
+    color: #00c174;
+    text-align: center;
+    height: 50px;
+}
+#top h1 {
+    padding: 5px;
+    
+}
+#header {
+    background-color: #009564;
+    margin: 0 200px;
+    border-radius: 5px;
+
+}
+#nav {
+    margin: 0;
+}
+#nav li {
+    display: inline-block;
+    padding: 10px;
+}
+#nav li a {
+    color: rgb(255, 255, 255);
+    text-decoration:none;
+}
+#content {
+    /* background-color: #bbe6ff; */
+    min-height: 500px;
+    margin: 10px 200px;
+    border-radius: 5px;
+}
+.button {
+    color: rgb(255, 0, 111);
+    position: fixed;
+    top:20%;
+    left: 10%;
+}
+.back_ground {
+    width: 100%;
+}
+.col {
+  display: table-cell;
+  padding: 1rem
+}
+.f-grid {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 200px;
+    flex-flow: row wrap;
+}
+.f-grid-col {
+    flex: 1 0;
+}
+.base_content {
+    font-size: 18px;
+}
+
+#btn_content {
+    margin: 30px 0;
+    flex: 1 0;
+    text-align: center;
+
+}
+.btn_content_1 {
+    text-align: center;
+}
+.btn {
+    text-align: center;
+}
+.btn-point {
+    background-color: rgb(255, 132, 74);
+    font-size: 20px;
+    border-radius: 3px;
+    color: #ffff;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    margin: 0 70px;
+    
+}
+.btn-point :hover{
+    cursor: pointer;
+    background-color: blue
+}
+.btn :hover {
+    cursor: pointer;
+    background-color: blue
+}
+#overlay_rnn {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: #fffffff5;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+#overlay_sarima {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: #fffffff5;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+#overlay_lstm {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: #fffffff5;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+.overlay_col  {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 200px;
+    flex-flow: row wrap;
+}
+.overlay-content {
+    color: rgb(0, 0, 0);
+    position: relative;
+    top: 25%;
+    width: 50%;
+    text-align: center;
+    margin-top: 30px;
+    font-family: Arial;
+}
+
+#overlay_rnn .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: rgb(25, 0, 255);
+    text-decoration: none;
+}
+#overlay_lstm .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: rgb(25, 0, 255);
+    text-decoration: none;
+}
+#overlay_sarima .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: rgb(25, 0, 255);
+    text-decoration: none;
+}
+
+#overlay_rnn .overlay_table {
+    background-color: #c7fcd4f5;
+    padding: 10px 0;
+    margin: 10px 0
+}
+.btn_predict {
+    background-color: coral;
+    padding: 10px;
+    border: none;
+}
+.btn_predict:hover {
+    cursor: pointer;
+    background-color: white;
+    color: coral;
+}
+#content_predict {
+    display: none;
+}
+#myChart {
+    background-color: #f3fff4;
+    margin: 30px 0;
+}  
+
+#predictChart {
+    background-color: #f3fff4;
+    margin: 30px 0;
+    width: 800px;
+}
+#barChart {
+    background-color: #ffffff;
+    margin: 30px 0;
+}
+.showmoremodel {
+    padding: 5px 0;
+    background-color: orange;
+    color: #ffff;
+    border-radius: 2px;
+    text-decoration:none;
+}
